@@ -1,7 +1,14 @@
+# avoid exposing secrets
+.netrc
+
 # ignore any raster files
+*.jp2
 *.tiff
 *.zip
 *.SAFE
+
+.jupyter
+.local
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,jupyternotebooks

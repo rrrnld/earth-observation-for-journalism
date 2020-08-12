@@ -3,6 +3,6 @@
 FROM jupyter/scipy-notebook
 ENV JUPYTER_LAB_ENABLE=1
 
-# RUN pip install geopandas sentinelsat==0.14 descartes && \
-# 	fix-permissions $CONDA_DIR && \
-# 	fix-permissions /home/$NB_USER
+RUN pip install geopandas==0.18.1 descartes=1.1.0 sentinelsat==0.14 rasterio==1.1.5 && \
+	fix-permissions $CONDA_DIR && \
+	fix-permissions /home/$NB_USER
