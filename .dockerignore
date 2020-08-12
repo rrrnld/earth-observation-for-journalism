@@ -1,0 +1,4 @@
+# don't send downloaded artefacts to the docker build daemon
+**/input/**/*.zip
+**/input/**/*.SAFE*
+**/input/**/*.jp2
