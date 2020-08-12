@@ -5,7 +5,12 @@
 *.jp2
 *.tiff
 *.zip
-*.SAFE
+*.SAFE/*
+
+**/input/**/*.jp2
+**/input/**/*.tiff
+**/input/**/*.zip
+**/input/**/*.SAFE/*
 
 .jupyter
 .local
