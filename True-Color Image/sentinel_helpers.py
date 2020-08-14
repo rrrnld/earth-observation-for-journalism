@@ -1,9 +1,12 @@
-import zipfile
 import glob
-from Pathlib import Path
+import urllib.parse
+from pathlib import Path
+import zipfile
+
+import geopandas as gp
+
 
 def band_paths(p, bands, resolution=None):
-
     '''
 
     Given a zip file or folder at `p`, returns the paths inside p to the raster files containing
@@ -18,8 +21,7 @@ def band_paths(p, bands, resolution=None):
             files = f.namelist()
             rasters = [f for f in files if f.endswith('.jp2')]
     else:
-        rasters = glob.glob(Path(p) / '**/*.jp2'
-        
+        rasters = glob.glob(Path(p) / '**/*.jp2')
     rasters = [r for r in rasters for b in bands if b in r]
     if resolution:
         rasters = [r for r in rasters if resolution in r]
@@ -30,3 +32,13 @@ def band_paths(p, bands, resolution=None):
  
 def rgb_paths(zip_file, resolution='10m'):
     return band_paths(zip_file, ['B02', 'B03', 'B04'], resolution)
+
+
+def search_osm(place):
+    '''
+    Returns a GeoDataFrame with results from OpenStreetMap Nominatim for the given search string.
+    This allows us to fetch detailed geometries for virtually any place on earth.
+    '''
+    urlescaped_place = urllib.parse.quote(place)
+    search_url = 'https://nominatim.openstreetmap.org/search/?q={}&format=geojson&polygon_geojson=1'.format(urlescaped_place)
+    return gp.read_file(search_url)
