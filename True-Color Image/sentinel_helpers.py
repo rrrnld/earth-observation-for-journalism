@@ -4,11 +4,12 @@ from pathlib import Path
 import zipfile
 
 import geopandas as gp
+import rasterio as r
 
+from rasterio.warp import calculate_default_transform, reproject, Resampling
 
 def band_paths(p, bands, resolution=None):
     '''
-
     Given a zip file or folder at `p`, returns the paths inside p to the raster files containing
     information for the given bands. Because some bands are available in more than one
     resolution, this can be filtered by prodiding a third parameter (e.g. resolution='10m').
@@ -42,3 +43,29 @@ def search_osm(place):
     urlescaped_place = urllib.parse.quote(place)
     search_url = 'https://nominatim.openstreetmap.org/search/?q={}&format=geojson&polygon_geojson=1'.format(urlescaped_place)
     return gp.read_file(search_url)
+
+
+def reproject_raster_image(src, dst, target_crs):
+    '''
+    Reprojects `src` into `dst`, given a coordinate reference system `target_crs`.
+    '''
+    transform, width, height = calculate_default_transform(
+        src.crs, target_crs, src.width, src.height, *src.bounds)
+        
+    kwargs = src.meta.copy()
+    kwargs.update({
+        'crs': target_crs,
+        'transform': transform,
+        'width': width,
+        'height': height
+    })
+
+    for i in range(1, src.count + 1):
+        reproject(
+            source=r.band(src, i),
+            destination=r.band(dst, i),
+            src_transform=src.transform,
+            src_crs=src.crs,
+            dst_transform=transform,
+            dst_crs=target_crs,
+            resampling=Resampling.nearest)
