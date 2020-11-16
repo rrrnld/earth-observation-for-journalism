@@ -1,6 +1,6 @@
 # See https://jupyter-docker-stacks.readthedocs.io/en/latest/using/recipes.html#using-pip-install-or-conda-install-in-a-child-docker-image for more info
 
-FROM jupyter/scipy-notebook
+FROM jupyter/scipy-notebook:42f4c82a07ff
 ENV JUPYTER_ENABLE_LAB=yes
 
 RUN conda install -c conda-forge geopandas==0.8.1 && \
