@@ -1,8 +1,3 @@
 # don't send hidden files and folders, they are non-essential to the 
 # build process
 .*
-
-# don't send downloaded artefacts to the docker build daemon
-**/input/**/*.zip
-**/input/**/*.SAFE*
-**/input/**/*.jp2
