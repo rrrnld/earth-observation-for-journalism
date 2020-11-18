@@ -1,3 +1,7 @@
 # don't send hidden files and folders, they are non-essential to the 
 # build process
 .*
+
+# ignore files downloaded from scihub
+**/*.SAFE
+**/*.zip
