@@ -1,0 +1,6 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+- file: README
+- part: True Color Images
+  chapters:
+  - file: "true-color-image/00 Download and plot single true-color image"
