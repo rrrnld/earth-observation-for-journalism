@@ -111,9 +111,14 @@ def scihub_bgr_paths(raster_path, resolution=None):
 
 
 def scihub_normalize_range(v):
+    '''
+    Raster files downloaded from the Copernicus Open Access Hub can contain
+    pixels with reflectance values outside of the allowed range. This function
+    discards those values and normalizes the range of the returned raster file
+    to be [0...1].
+    '''
     return np.clip(v, 0, 2000) / 2000
 
- 
 
 def reproject_raster_image(src, dst, target_crs):
     '''
@@ -139,3 +144,28 @@ def reproject_raster_image(src, dst, target_crs):
             dst_transform=transform,
             dst_crs=target_crs,
             resampling=Resampling.nearest)
+
+        
+        
+# TODO: This is documented somewhere in the python docs, we should link to it here
+
+class RasterReaderList():
+    '''
+    This class allows opening a list of file paths in a `with` block using
+    rasterio.open. They get automatically closed when the context created by
+    the `with` block is left.
+    '''
+    
+    def __init__(self, paths):
+        self.open_files = []
+        self.paths = paths
+    
+    def __enter__(self):
+        for f in self.paths:
+            self.open_files.append(r.open(f))
+        
+        return self.open_files
+    
+    def __exit__(self, _type, _value, _traceback):
+        for f in self.open_files:
+            f.close()

@@ -8,7 +8,7 @@
 *.tif.aux.xml
 *.tiff.aux.xml
 *.zip
-*.SAFE/*
+**/*.SAFE/*
 
 .jupyter
 .local
