@@ -3,5 +3,10 @@
 /.*
 
 # ignore files downloaded from scihub
+**/*.jp2
+**/*.tif
+**/*.tiff
+**/*.tif.aux.xml
+**/*.tiff.aux.xml
 **/*.SAFE
 **/*.zip

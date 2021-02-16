@@ -3,14 +3,12 @@
 
 # ignore any raster files
 *.jp2
+*.tif
 *.tiff
+*.tif.aux.xml
+*.tiff.aux.xml
 *.zip
 *.SAFE/*
-
-**/input/**/*.jp2
-**/input/**/*.tiff
-**/input/**/*.zip
-**/input/**/*.SAFE/*
 
 .jupyter
 .local
