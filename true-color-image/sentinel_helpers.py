@@ -51,15 +51,6 @@ def plot_all(items, extra_kwargs=[]):
             ax = item.plot(**kwargs)
         else:
             item.plot(ax=ax, **kwargs)
-    
-    
-def scihub_product_ids(geodataframe):
-    '''
-    Returns the product ids of items in a GeoDataFrame returned by
-    `sentinelsat.to_geodataframe` as expected by `sentinelsat.download` and
-    `sentinelsat.download_all`.
-    '''
-    return [link.split('Products(\'')[-1].split('\')/$value')[0] for link in geodataframe['link'].values]
 
 
 def scihub_band_paths(p, bands, resolution=None):
