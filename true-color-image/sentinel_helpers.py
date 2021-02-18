@@ -1,6 +1,5 @@
 import urllib.parse
 from pathlib import Path
-import zipfile
 
 import fiona
 import geopandas as gpd
@@ -8,6 +7,15 @@ from matplotlib import pyplot as plt
 import numpy as np
 import rasterio as r
 from rasterio.warp import calculate_default_transform, reproject, Resampling
+
+from shapely.geometry import shape
+from shapely.geometry.polygon import Polygon
+from shapely.ops import unary_union
+
+from tempfile import TemporaryDirectory
+from zipfile import ZipFile
+
+import warnings
 
 def search_osm(place):
     '''
@@ -73,7 +81,7 @@ def scihub_band_paths(p, bands, resolution=None):
     if p.suffix == '.zip':
         # when dealing with zip files we have to read the filenames from the
         # archive first
-        with zipfile.ZipFile(p) as f:
+        with ZipFile(p) as f:
             files = f.namelist()
             rasters = [f for f in files if f.endswith('.jp2')]
     else:
@@ -93,13 +101,47 @@ def scihub_band_paths(p, bands, resolution=None):
     return rasters
 
 
-def scihub_bgr_paths(raster_path, resolution=None):
+def scihub_bgr_paths(product_path, resolution=None):
     '''
     A convenence function to return the paths to the blue, green and red bands
-    in the downloaded product at `raster_path`.
+    in the downloaded product at `product_path`.
     '''
-    return scihub_band_paths(raster_path, ['B02', 'B03', 'B04'], resolution)
+    return scihub_band_paths(product_path, ['B02', 'B03', 'B04'], resolution)
 
+
+def scihub_cloud_mask(product_path):
+    '''
+    Given a `product_path` pointing to a product downlaoded from the Copernicus
+    Open Access Hub, returns a shapely geometry representing the included cloud
+    mask.
+    '''
+    with TemporaryDirectory() as tmp_dir:
+        # we need the temporary directory to work around a problem with reading
+        # vector files from zip archives
+        
+        p = Path(product_path)
+        if p.suffix == '.zip':
+            # when dealing with zip files we have to read the filenames from the
+            # archive first
+            with ZipFile(p) as f:
+                files = f.namelist()
+                file = [f for f in files if f.endswith('MSK_CLOUDS_B00.gml')][0]
+                f.extract(file, tmp_dir)
+                file = Path(tmp_dir) / file
+        else:
+            file = list(p.glob('**/MSK_CLOUDS_B00.gml'))[0]
+
+        try:
+            with fiona.open(file) as features:
+                with warnings.catch_warnings():
+                    warnings.simplefilter("ignore")
+                    # this returns a warning because the iterator has to be
+                    # rewound; while this is a performance issue, we can ignore it
+                    return unary_union([shape(f['geometry']) for f in features])
+        except ValueError:
+            # empty cloud mask
+            return Polygon([])
+    
 
 def scihub_normalize_range(v):
     '''
@@ -113,6 +155,7 @@ def scihub_normalize_range(v):
 
 def reproject_raster_image(src, dst, target_crs):
     '''
+    FIXME: UNUSED!?
     Reprojects `src` into `dst`, given a coordinate reference system `target_crs`.
     '''
     transform, width, height = calculate_default_transform(
