@@ -175,34 +175,6 @@ def scihub_normalize_range(v):
     '''
     return np.clip(v, 0, 2000) / 2000
 
-
-def reproject_raster_image(src, dst, target_crs):
-    '''
-    FIXME: UNUSED!?
-    Reprojects `src` into `dst`, given a coordinate reference system `target_crs`.
-    '''
-    transform, width, height = calculate_default_transform(
-        src.crs, target_crs, src.width, src.height, *src.bounds)
-        
-    kwargs = src.meta.copy()
-    kwargs.update({
-        'crs': target_crs,
-        'transform': transform,
-        'width': width,
-        'height': height
-    })
-
-    for i in range(1, src.count + 1):
-        reproject(
-            source=r.band(src, i),
-            destination=r.band(dst, i),
-            src_transform=src.transform,
-            src_crs=src.crs,
-            dst_transform=transform,
-            dst_crs=target_crs,
-            resampling=Resampling.nearest)
-
-        
         
 # TODO: This is documented somewhere in the python docs, we should link to it here
 
