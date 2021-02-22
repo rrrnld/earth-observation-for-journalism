@@ -149,7 +149,7 @@ def scihub_cloud_mask(product_path, **kwargs):
         except ValueError:
             # empty cloud mask
             mask = Polygon([])
-            
+
     if kwargs.get('rasterize'):
         # return raster version of the vector geometry we found above
         target_shape = kwargs.get('target_shape')
@@ -198,3 +198,16 @@ class RasterReaderList():
     def __exit__(self, _type, _value, _traceback):
         for f in self.open_files:
             f.close()
+
+
+def geodataframe_on_map(geodataframe):
+    '''
+    Plot a GeoDataframe or GeoSeries on a Leaflet map; map automatically
+    centers
+    '''
+    bbox = geodataframe.unary_union.bounds
+    minx, miny, maxx, maxy = bbox
+    m = folium.Map([0, 0], tiles='cartodbpositron')
+    folium.GeoJson(geodataframe.to_json()).add_to(m)
+    m.fit_bounds([[miny, minx], [maxy, maxx]])
+    return m
