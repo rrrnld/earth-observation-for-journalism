@@ -5,6 +5,8 @@
 *.jp2
 *.tif
 *.tiff
+*.tif.msk
+*.tiff.msk
 *.tif.aux.xml
 *.tiff.aux.xml
 *.zip
