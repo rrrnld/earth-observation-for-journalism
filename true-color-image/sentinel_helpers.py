@@ -159,6 +159,10 @@ def scihub_cloud_mask(product_path, **kwargs):
                 'to construct a rasterized cloud mask.'
             raise ValueError(error_msg)
         
+        # completely empty cloud masks have to be handled separately
+        if mask.is_empty:
+            return np.full(target_shape, True)
+        
         return geometry_mask(mask,
                              out_shape=target_shape,
                              transform=target_transform)
