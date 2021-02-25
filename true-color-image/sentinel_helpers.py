@@ -1,3 +1,4 @@
+from dateutil.parser import parse as parse_datetime
 import urllib.parse
 from pathlib import Path
 
@@ -22,7 +23,6 @@ import warnings
 def search_osm(place):
     '''
     Returns a GeoDataFrame with results from OpenStreetMap Nominatim for the given search string.
-    This allows us to fetch detailed geometries for virtually any place on earth.
     '''
     urlescaped_place = urllib.parse.quote(place)
     search_url = ('https://nominatim.openstreetmap.org/search/?q={}' +
@@ -90,15 +90,15 @@ def scihub_band_paths(p, bands, resolution=None):
         rasters = p.glob('**/*.jp2')
     
     # take only the paths that contain one of the given bands
-    rasters = [raster for band in bands for raster in rasters if band in raster]
+    rasters = [Path(raster) for band in bands for raster in rasters if band in raster]
     
     # if a resolution is given, further discard the bands we don't need
     if resolution:
-        rasters = [raster for raster in rasters if resolution in raster]
+        rasters = [raster for raster in rasters if resolution in raster.name]
 
     if p.suffix == '.zip':
         # we have to reformat the paths to 
-        rasters = [f'zip+file://{p}!/{r}' for r in rasters]
+        rasters = [Path(f'zip+file://{p}!/{r.name}') for r in rasters]
     
     return rasters
 
@@ -179,6 +179,18 @@ def scihub_normalize_range(v):
     '''
     return np.clip(v, 0, 2000) / 2000
 
+
+def scihub_band_date(band):
+    '''
+    Given a string, `pathlib.Path` or `rasterio.DataSetReader`, returns the
+    datetime encoded in the filename.
+    '''
+    if type(band) is r.DatasetReader:
+        file_name = band.name
+    else:
+        file_name = Path(band).name
+    return parse_datetime(file_name.split('_')[-3])
+
         
 # TODO: This is documented somewhere in the python docs, we should link to it here
 
@@ -215,3 +227,4 @@ def geodataframe_on_map(geodataframe):
     folium.GeoJson(geodataframe.to_json()).add_to(m)
     m.fit_bounds([[miny, minx], [maxy, maxx]])
     return m
+
