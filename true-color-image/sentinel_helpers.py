@@ -90,15 +90,15 @@ def scihub_band_paths(p, bands, resolution=None):
         rasters = p.glob('**/*.jp2')
     
     # take only the paths that contain one of the given bands
-    rasters = [Path(raster) for band in bands for raster in rasters if band in raster]
+    rasters = [raster for band in bands for raster in rasters if band in raster]
     
     # if a resolution is given, further discard the bands we don't need
     if resolution:
-        rasters = [raster for raster in rasters if resolution in raster.name]
+        rasters = [raster for raster in rasters if resolution in raster]
 
     if p.suffix == '.zip':
-        # we have to reformat the paths to 
-        rasters = [Path(f'zip+file://{p}!/{r.name}') for r in rasters]
+        # we have to reformat the paths to point inside the zip archive
+        rasters = [f'zip+file://{p}!/{r}' for r in rasters]
     
     return rasters
 
@@ -223,7 +223,7 @@ def geodataframe_on_map(geodataframe):
     '''
     bbox = geodataframe.unary_union.bounds
     minx, miny, maxx, maxy = bbox
-    m = folium.Map([0, 0], tiles='cartodbpositron')
+    m = folium.Map([0, 0], tiles='cartodbpositron', scroll_wheel_zoom=False)
     folium.GeoJson(geodataframe.to_json()).add_to(m)
     m.fit_bounds([[miny, minx], [maxy, maxx]])
     return m
