@@ -5,7 +5,10 @@
 
 #######################################################################################
 # Book settings
-title                       : Sentinel Data for Earth Observation  # The title of the book. Will be placed in the left navbar.
-author                      : Arne Schlüter  # The author of the book
-copyright                   : "2020"  # Copyright year to be placed in the footer
-logo                        : logo.png  # A path to the book logo
+title: Remote Sensing for Journalism  # The title of the book. Will be placed in the left navbar.
+author: Arne Schlüter  # The author of the book
+copyright: "CC-BY-SA 4.0 2021"  # Copyright year to be placed in the footer
+execute:
+  execute_notebooks: "off"
+
+# logo                        : logo.png  # A path to the book logo

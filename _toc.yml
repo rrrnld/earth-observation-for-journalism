@@ -1,6 +1,9 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
 - file: README
-- part: True Color Images
+- part: "Data retrieval and processing"
   chapters:
-  - file: "true-color-image/00 Download and plot single true-color image"
+  - file: "remote-sensing-research/01a Download from Scihub.ipynb"
+  - file: "remote-sensing-research/01b Plot downloaded products.ipynb"
+  - file: "remote-sensing-research/01c Coverage analysis.ipynb"
+  - file: "remote-sensing-research/01 True-color pipeline.ipynb"

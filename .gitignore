@@ -1,3 +1,7 @@
+# ignore jupyter-book build artefacts
+/_build
+.bash_history
+
 # avoid exposing secrets
 .netrc
 
