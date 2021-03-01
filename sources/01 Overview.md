@@ -1,4 +1,4 @@
-# Data Retrieval and Processing
+# Overview
 
 The first chapter contains notebooks that document the data retrieval process from the Copernicus Open Access Hub.
 
