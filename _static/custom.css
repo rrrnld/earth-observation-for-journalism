@@ -1,0 +1,4 @@
+div.navbar-brand-box a.navbar-brand img {
+  max-height: unset !important;
+  max-width: 80%
+}

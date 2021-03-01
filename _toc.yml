@@ -3,7 +3,8 @@
 - file: README
 - part: "Data retrieval and processing"
   chapters:
-  - file: "remote-sensing-research/01a Download from Scihub.ipynb"
-  - file: "remote-sensing-research/01b Plot downloaded products.ipynb"
-  - file: "remote-sensing-research/01c Coverage analysis.ipynb"
-  - file: "remote-sensing-research/01 True-color pipeline.ipynb"
+  - file: "sources/01 Data retrieval and processing.md"
+  - file: "sources/01a Download from Scihub.ipynb"
+  - file: "sources/01b Plot downloaded products.ipynb"
+  - file: "sources/01c Coverage analysis.ipynb"
+  - file: "sources/01 True-color pipeline.ipynb"

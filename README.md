@@ -1,4 +1,4 @@
-# Remote sensing for journalism
+# Remote Sensing for Journalism
 
 This repository contains a series of notebooks describing interaction with the Copernicus Open Acces Hub in order to obtain and manipulate earth observation data.
 The aim is to document common tasks that might make the data from the Copernicus Sentinel missions attractive for usage in data journalism reporting.
@@ -11,7 +11,7 @@ Copernicus Open Access Hub is the platform which is openly distributing the Terr
 A (free) Scihub account is needed in order to follow this documentation interactively.
 The registration form can be found at https://scihub.copernicus.eu/dhus/. 
 
-## Obtaining and running the code
+## Obtaining and Running the Code
 
 The source code lives at https://github.com/heyarne/remote-sensing-for-journalism.
 
@@ -38,6 +38,12 @@ This starts up a `JupyterLab` environment which allows you to interactively exec
 
 The Docker image is based on the [jupyter/scipy-notebook](https://github.com/jupyter/docker-stacks/tree/master/scipy-notebook).
 Follow the link for more information on installed packages or other configuration details.
+
+## Hardware Requirements
+
+Note that working with this kind of data is resource intensive.
+These notebooks download or create roughly 50GB of data, most of which is occupied by compressed GeoTIFF files.
+They have been executed and tested on a virtual server with 4 CPU cores at 2.6 GHz each and 32 GB of RAM.
 
 ## Building the Jupyter Book
 

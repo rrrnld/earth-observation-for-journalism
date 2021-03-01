@@ -1,9 +1,0 @@
-{
-"type": "FeatureCollection",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "properties": { "place_id": 3285415, "osm_type": "node", "osm_id": 387079362, "display_name": "Frohnsdorf, Treuenbrietzen, Potsdam-Mittelmark, Brandenburg, 14929, Deutschland", "place_rank": 19, "category": "place", "type": "village", "importance": 0.495, "icon": "https:\/\/nominatim.openstreetmap.org\/ui\/mapicons\/\/poi_place_village.p.20.png" }, "geometry": { "type": "Point", "coordinates": [ 12.902171, 52.0546551 ] } },
-{ "type": "Feature", "properties": { "place_id": 554316, "osm_type": "node", "osm_id": 226935349, "display_name": "Klausdorf, Treuenbrietzen, Potsdam-Mittelmark, Brandenburg, Deutschland", "place_rank": 19, "category": "place", "type": "village", "importance": 0.495, "icon": "https:\/\/nominatim.openstreetmap.org\/ui\/mapicons\/\/poi_place_village.p.20.png" }, "geometry": { "type": "Point", "coordinates": [ 12.9421292, 52.0487863 ] } },
-{ "type": "Feature", "properties": { "place_id": 303964452, "osm_type": "node", "osm_id": 282202396, "display_name": "Tiefenbrunnen, Treuenbrietzen, Potsdam-Mittelmark, Brandenburg, Deutschland", "place_rank": 22, "category": "place", "type": "isolated_dwelling", "importance": 0.42, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 12.9443928, 52.0353239 ] } }
-]
-}
