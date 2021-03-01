@@ -4,20 +4,21 @@
   title: "Remote Sensing for Journalism"
 - part: "Data Retrieval and Processing"
   chapters:
-  - file: "sources/01 Data retrieval and processing.md"
+  - file: "sources/01 Overview.md"
   - file: "sources/01a Download from Scihub.ipynb"
   - file: "sources/01b Plot downloaded products.ipynb"
   - file: "sources/01c Coverage analysis.ipynb"
   - file: "sources/1d Brandenburg mosaic.ipynb"
-  - file: "sources/01 True-color pipeline.ipynb"
+  - file: "sources/01e True-color pipeline.ipynb"
 - part: "Spectral Indices"
   chapters:
   - file: "sources/02a NDVI.ipynb"
   - file: "sources/02b Timeseries.ipynb"
-  - file: "sources/02c Corrupted Zip File.ipynb"
-  - file: "sources/02c Multithreading.ipynb"
-  - file: "sources/02d Cloud Masks.ipynb"
-  - file: "sources/02 Spectral Indices.ipynb"
+    sections:
+    - file: "sources/02c Corrupted Zip File.ipynb"
+    - file: "sources/02c Multithreading.ipynb"
+    - file: "sources/02d Cloud Masks.ipynb"
+  - file: "sources/02e Spectral Indices.ipynb"
 - part: "Burn Ratio Calculations"
   chapters:
   - file: "sources/03a Forest Fire Product Downloads.ipynb"
