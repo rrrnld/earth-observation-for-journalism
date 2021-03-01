@@ -2,6 +2,9 @@
 # build process
 /.*
 
+# ignore jupyter-book artefacts
+/_build
+
 # ignore files downloaded from scihub
 **/*.jp2
 **/*.tif
@@ -10,3 +13,4 @@
 **/*.tiff.aux.xml
 **/*.SAFE
 **/*.zip
+**/*.zip.incomplete

@@ -14,6 +14,7 @@
 *.tif.aux.xml
 *.tiff.aux.xml
 *.zip
+*.zip.incomplete
 **/*.SAFE/*
 
 .jupyter

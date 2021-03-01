@@ -10,7 +10,7 @@
   - file: "sources/01c Coverage analysis.ipynb"
   - file: "sources/1d Brandenburg mosaic.ipynb"
   - file: "sources/01 True-color pipeline.ipynb"
-- part: "Band Maths"
+- part: "Spectral Indices"
   chapters:
   - file: "sources/02a NDVI.ipynb"
   - file: "sources/02b Timeseries.ipynb"
