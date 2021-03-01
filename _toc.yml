@@ -1,17 +1,17 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
-- file: README
-  title: "Remote Sensing for Journalism"
+- file: "README.md"
 - part: "Data Retrieval and Processing"
   chapters:
   - file: "sources/01 Overview.md"
   - file: "sources/01a Download from Scihub.ipynb"
   - file: "sources/01b Plot downloaded products.ipynb"
   - file: "sources/01c Coverage analysis.ipynb"
-  - file: "sources/1d Brandenburg mosaic.ipynb"
+  - file: "sources/01d Brandenburg mosaic.ipynb"
   - file: "sources/01e True-color pipeline.ipynb"
 - part: "Spectral Indices"
   chapters:
+  - file: "sources/02 Overview.md"
   - file: "sources/02a NDVI.ipynb"
   - file: "sources/02b Timeseries.ipynb"
     sections:
@@ -21,6 +21,7 @@
   - file: "sources/02e Spectral Indices.ipynb"
 - part: "Burn Ratio Calculations"
   chapters:
+  - file: "sources/03 Overview.md"
   - file: "sources/03a Forest Fire Product Downloads.ipynb"
   - file: "sources/03b Example Initialized Downloads.ipynb"
   - file: "sources/03b Forest Fires 2018 and 2019.ipynb"
