@@ -11,5 +11,12 @@ copyright: "CC-BY-SA 4.0 2021"  # Copyright year to be placed in the footer
 logo: great-forty-foot-telescope-wikipedia.png  # A path to the book logo
 execute:
   execute_notebooks: "off"
+
+sphinx:
+  config:
+    nb_custom_formats:
+      .py:
+        - jupytext.reads
+        - fmt: Rmd
  
 exclude_patterns: [_build, .cache, .config, .local, .npm, Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
