@@ -13,5 +13,6 @@ RUN pip install \
     descartes==1.1.0 sentinelsat==0.14 rasterio==1.2.0 folium==0.11.0 \
     jupyterlab-spellchecker \
     jupyter-book==0.10.0
+RUN jupyter nbextension enable --py widgetsnbextension
 RUN fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER
