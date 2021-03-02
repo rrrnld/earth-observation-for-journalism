@@ -28,4 +28,4 @@
   - file: "sources/03c dNBR.ipynb"
 - part: "Appendix"
   chapters:
-  - file: "sources/sentinel_helpers.py"
+  - file: "sources/XX sentinel_helpers.rst"
