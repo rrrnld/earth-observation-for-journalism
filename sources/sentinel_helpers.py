@@ -192,7 +192,7 @@ def scihub_band_date(band):
     return parse_datetime(file_name.split('_')[-3])
 
         
-# TODO: This is documented somewhere in the python docs, we should link to it here
+# See https://book.pythontips.com/en/latest/context_managers.html#implementing-a-context-manager-as-a-class
 
 class RasterReaderList():
     '''
@@ -200,7 +200,6 @@ class RasterReaderList():
     rasterio.open. They get automatically closed when the context created by
     the `with` block is left.
     '''
-    
     def __init__(self, paths):
         self.open_files = []
         self.paths = paths
@@ -213,7 +212,12 @@ class RasterReaderList():
     
     def __exit__(self, _type, _value, _traceback):
         for f in self.open_files:
-            f.close()
+            # wrapped in a block so we still close other fails if one fails
+            # to close
+            try:
+                f.close()
+            except:
+                pass
 
 
 def geodataframe_on_map(geodataframe):
