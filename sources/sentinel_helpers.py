@@ -69,8 +69,8 @@ def scihub_band_paths(p, bands, resolution=None):
     information for the given bands. Because some bands are available in more than one
     resolution, this can be filtered by prodiding a third parameter (e.g. resolution='10m').
     
-    `p` can be a string or a pathlib.Path.
-    `bands` can be a list of bands or a single band.
+    - `p` can be a string or a pathlib.Path.
+    - `bands` can be a list of bands or a single band.
    
     The returned paths are formatted in the zip scheme as per Apache Commons VFS if necessary
     and can be directly opened by rasterio.
@@ -85,20 +85,16 @@ def scihub_band_paths(p, bands, resolution=None):
         # archive first
         with ZipFile(p) as f:
             files = f.namelist()
-            rasters = [f for f in files if f.endswith('.jp2')]
+            rasters = [Path(f'zip+file://{p.absolute()}!/{f}') for f in files if f.endswith('.jp2')]
     else:
         rasters = p.glob('**/*.jp2')
     
     # take only the paths that contain one of the given bands
-    rasters = [raster for band in bands for raster in rasters if band in raster]
+    rasters = [raster for band in bands for raster in rasters if band in raster.name]
     
     # if a resolution is given, further discard the bands we don't need
     if resolution:
-        rasters = [raster for raster in rasters if resolution in raster]
-
-    if p.suffix == '.zip':
-        # we have to reformat the paths to point inside the zip archive
-        rasters = [f'zip+file://{p}!/{r}' for r in rasters]
+        rasters = [raster for raster in rasters if resolution in raster.name]
     
     return rasters
 
