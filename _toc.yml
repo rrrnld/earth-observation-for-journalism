@@ -4,7 +4,7 @@
 - part: "Data Retrieval and Processing"
   chapters:
   - file: "sources/01 Overview.md"
-  - file: "sources/01a Download from Scihub.ipynb"
+  - file: "sources/01a Download Process.ipynb"
   - file: "sources/01b Plot downloaded products.ipynb"
   - file: "sources/01c Coverage analysis.ipynb"
   - file: "sources/01d Brandenburg mosaic.ipynb"
