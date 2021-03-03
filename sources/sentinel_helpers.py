@@ -62,6 +62,26 @@ def plot_all(items, extra_kwargs=[]):
         else:
             item.plot(ax=ax, **kwargs)
 
+            
+def plot_downloaded_products(products, area_of_interest, **kwargs):
+    ax = kwargs.get('ax')
+    if not ax:
+        fig, ax = plt.subplots(**kwargs)
+        
+    grey = '#777777'
+    purple = '#988ED5'
+    
+    # area of interest in background
+    a = area_of_interest.plot(ax=ax, facecolor=grey)
+    # product fill layer
+    b = products.plot(ax=ax, facecolor=purple, alpha=kwargs.get('alpha', 0.1))
+    # product stroke layer
+    products.plot(ax=ax, facecolor='none', edgecolor=purple, alpha=0.4)
+    
+    if not kwargs.get('ax'):
+        ax.set(title='Area of Interest and Available Products')
+    
+    return ax
 
 def scihub_band_paths(p, bands, resolution=None):
     '''
