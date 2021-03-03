@@ -5,7 +5,7 @@
   chapters:
   - file: "sources/01 Overview.md"
   - file: "sources/01a Download Process.ipynb"
-  - file: "sources/01b Plot downloaded products.ipynb"
+  - file: "sources/01b Visualization.ipynb"
   - file: "sources/01c Coverage analysis.ipynb"
   - file: "sources/01d Brandenburg mosaic.ipynb"
   - file: "sources/01e True-color pipeline.ipynb"
