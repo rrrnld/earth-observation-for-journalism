@@ -8,6 +8,6 @@ div.navbar-brand-box a.navbar-brand img {
 }
 
 .cell_output .output.stderr pre {
-  background-color: none;
+  background-color: transparent;
   color: #b3a783;
 }
