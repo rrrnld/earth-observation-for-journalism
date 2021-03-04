@@ -29,52 +29,24 @@ def search_osm(place):
                   '&format=geojson&polygon_geojson=1').format(urlescaped_place)
     return gpd.read_file(search_url)
 
-
-def nth(xs, n, default=None):
-    '''
-    Wraps list access to return `default` instead of returning an `ItemError`
-    when accessing out-of-bounds elements. `default` is `None` when not
-    explicitly given.
-    '''
-    try:
-        return xs[n]
-    except IndexError:
-        return default
-
-    
-def plot_all(items, extra_kwargs=[]):
-    '''
-    Returns a plot containing all of the geometries in `items`.
-    If an `item` does not contain a `plot` method, a GeoSeries will be
-    constructed from it.
-    
-    The parameter `extra_kwargs` can contain extra keyword arguments that are
-    passed to matplotlib for the given item.
-    '''
-    ax = None
-    for idx, item in enumerate(items):
-        if 'plot' not in dir(item):
-            item = gpd.GeoSeries(item)
-        
-        kwargs = nth(extra_kwargs, idx, {})
-        if not ax:
-            ax = item.plot(**kwargs)
-        else:
-            item.plot(ax=ax, **kwargs)
-
             
 def plot_downloaded_products(products, area_of_interest, **kwargs):
     ax = kwargs.get('ax')
+    alpha = kwargs.pop('alpha', 0.1)
     if not ax:
         fig, ax = plt.subplots(**kwargs)
         
     grey = '#777777'
     purple = '#988ED5'
     
+    if 'plot' not in dir(products):
+        # allow plotting raw shapely geometries
+        products = gpd.GeoSeries(products)
+    
     # area of interest in background
     a = area_of_interest.plot(ax=ax, facecolor=grey)
     # product fill layer
-    b = products.plot(ax=ax, facecolor=purple, alpha=kwargs.get('alpha', 0.1))
+    b = products.plot(ax=ax, facecolor=purple, alpha=alpha)
     # product stroke layer
     products.plot(ax=ax, facecolor='none', edgecolor=purple, alpha=0.4)
     
@@ -185,6 +157,7 @@ def scihub_cloud_mask(product_path, **kwargs):
     else:
         return mask
     
+# TODO: Unused??
 
 def scihub_normalize_range(v):
     '''
