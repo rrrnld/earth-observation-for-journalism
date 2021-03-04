@@ -1,3 +1,13 @@
 div.navbar-brand-box a.navbar-brand img {
   max-height: 13em !important;
 }
+
+/* make sure warnings are properly displayed */
+.cell_output .output.stderr {
+  background: #fff7dd;
+}
+
+.cell_output .output.stderr pre {
+  background-color: none;
+  color: #b3a783;
+}
