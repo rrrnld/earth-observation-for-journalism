@@ -16,5 +16,20 @@ repository:
   url: https://github.com/heyarne/remote-sensing-for-journalism
 html:
   use_repository_button: true
+  
+parse:
+  # defaults are extended to include amsmath
+  # see https://jupyterbook.org/customize/config.html?highlight=default#configuration-defaults
+  myst_enable_extensions:
+    - amsmath
+    - colon_fence
+    # - deflist
+    - dollarmath
+    # - html_admonition
+    # - html_image
+    - linkify
+    # - replacements
+    # - smartquotes
+    - substitution
  
 exclude_patterns: [_build, .cache, .config, .local, .npm, Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
