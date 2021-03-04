@@ -1,6 +1,6 @@
 # Remote Sensing for Journalism
 
-This repository contains a series of notebooks describing interaction with the Copernicus Open Acces Hub in order to obtain, manipulate and analyze earth observation data.
+This repository contains a series of notebooks describing interaction with the Copernicus Open Access Hub in order to obtain, manipulate and analyze earth observation data.
 The aim is to document common tasks that might make the data from the Copernicus Sentinel-2 mission attractive for usage in data journalism.
 
 The publication and research uses [Jupyter notebooks](https://jupyter.org) and is published using [jupyter-books](https://jupyter-book.org), an open-source python project that allows generating HTML pages from a collection of Jupyter notebooks.
@@ -10,6 +10,10 @@ The publication and research uses [Jupyter notebooks](https://jupyter.org) and i
 Copernicus Open Access Hub is the platform which is openly distributing the Terrabytes of Sentinel-2 data which these notebooks rely on.
 A (free) Scihub account is needed in order to follow this documentation interactively.
 The registration form can be found at https://scihub.copernicus.eu/dhus/. 
+
+## Target Audience
+
+These notebooks assume Python knowledge as well as familiarity with common Python data processing tools like the `pandas` library.
 
 ## Obtaining and Running the Code
 
