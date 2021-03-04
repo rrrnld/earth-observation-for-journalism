@@ -7,7 +7,7 @@
   - file: "sources/01a Download Process.ipynb"
   - file: "sources/01b Visualization.ipynb"
   - file: "sources/01c Coverage analysis.ipynb"
-  - file: "sources/01e True-color pipeline.ipynb"
+  - file: "sources/01d True-color Mosaic.ipynb"
 - part: "Spectral Indices"
   chapters:
   - file: "sources/02 Overview.md"
