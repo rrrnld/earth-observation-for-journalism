@@ -157,17 +157,6 @@ def scihub_cloud_mask(product_path, **kwargs):
     else:
         return mask
     
-# TODO: Unused??
-
-def scihub_normalize_range(v):
-    '''
-    Raster files downloaded from the Copernicus Open Access Hub can contain
-    pixels with reflectance values outside of the allowed range. This function
-    discards those values and normalizes the range of the returned raster file
-    to be [0...1].
-    '''
-    return np.clip(v, 0, 2000) / 2000
-
 
 def scihub_band_date(band):
     '''
