@@ -39,9 +39,11 @@ def plot_downloaded_products(products, area_of_interest, **kwargs):
     grey = '#777777'
     purple = '#988ED5'
     
+    # allow plotting raw shapely geometries
     if 'plot' not in dir(products):
-        # allow plotting raw shapely geometries
         products = gpd.GeoSeries(products)
+    if 'plot' not in dir(area_of_interest):
+        area_of_interest = gpd.GeoSeries(area_of_interest)
     
     # area of interest in background
     a = area_of_interest.plot(ax=ax, facecolor=grey)
