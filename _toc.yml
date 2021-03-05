@@ -12,11 +12,11 @@
   chapters:
   - file: "sources/02 Overview.md"
   - file: "sources/02a NDVI.ipynb"
-  - file: "sources/02b Timeseries.ipynb"
     sections:
     - file: "sources/02c Corrupted Zip File.ipynb"
     - file: "sources/02c Multithreading.ipynb"
     - file: "sources/02d Cloud Masks.ipynb"
+  - file: "sources/02b Timeseries.ipynb"
   - file: "sources/02e Spectral Indices.ipynb"
 - part: "Burn Ratio Calculations"
   chapters:
