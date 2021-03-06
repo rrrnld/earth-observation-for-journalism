@@ -3,7 +3,7 @@
 As mentioned before, the Sentinel-2 satellites capture data far outside the range of visible light. With wavelengths of up to 2100nm, some bands go far into the infra-red spectrum.
 The invisible parts of the spectrum are especially useful to calculate _Spectral Indices_ or _Indicators_.
 
-These indicators can be used for a range of different tasks. The Normalized Difference in Water Index (NDWI) for example provides a value containing information about how likely a pixel represents water. The Bare-Soil Index (BSI) gives an estimate about how likely a pixel represents soil that is not covered by vegetation. Others indicate vegetation health or plant activity. The method these indices rely on is the transfer of knowledge about the different reflective properties of material in specific wavelengths into mathematical formulas that allow drawing conclusions about surface phenomena.
+These indicators can be used for a range of different tasks. The Normalized Difference Water Index (NDWI) for example provides a value containing information about how likely a pixel represents water. The Bare-Soil Index (BSI) gives an estimate about how likely a pixel represents soil that is not covered by vegetation. Others indicate vegetation health or plant activity. The method these indices rely on is the transfer of knowledge about the different reflective properties of material in specific wavelengths into mathematical formulas that allow drawing conclusions about surface phenomena.
 
 This chapter explores how to calculate these indices over long and short time spans, leveraging the high spatial resolution to provide highly localized information.
 
