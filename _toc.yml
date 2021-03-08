@@ -11,7 +11,8 @@
 - part: "Spectral Indices"
   chapters:
   - file: "sources/02 Overview.md"
-  - file: "sources/02a NDVI.ipynb"
+  - file: "sources/02a Area of Interest Definition and Product Download.ipynb"
+  - file: "sources/02b NDVI.ipynb"
     sections:
     - file: "sources/02c Corrupted Zip File.ipynb"
     - file: "sources/02c Multithreading.ipynb"
