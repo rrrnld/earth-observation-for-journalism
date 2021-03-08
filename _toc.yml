@@ -15,7 +15,7 @@
   - file: "sources/02b NDVI.ipynb"
     sections:
     - file: "sources/02c Corrupted Zip File.ipynb"
-    - file: "sources/02c Multithreading.ipynb"
+    - file: "sources/02c Multiprocessing Benchmarks.ipynb"
     - file: "sources/02d Cloud Masks.ipynb"
   - file: "sources/02b Timeseries.ipynb"
   - file: "sources/02e Spectral Indices.ipynb"
