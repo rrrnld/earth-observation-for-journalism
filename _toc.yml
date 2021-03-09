@@ -3,14 +3,14 @@
 - file: "README.md"
 - part: "Data Retrieval and Processing"
   chapters:
-  - file: "sources/01 Overview.md"
+  - file: "sources/01-overview.md"
   - file: "sources/01a-download-process.ipynb"
   - file: "sources/01b-visualization.ipynb"
   - file: "sources/01c-coverage-analysis.ipynb"
   - file: "sources/01d-true-color-mosaic.ipynb"
 - part: "Spectral Indices"
   chapters:
-  - file: "sources/02 Overview.md"
+  - file: "sources/02-overview.md"
   - file: "sources/02a-area-of-interest-definition-and-product-download.ipynb"
   - file: "sources/02b-ndvi.ipynb"
     sections:
@@ -21,7 +21,7 @@
   - file: "sources/02e-spectral-indices.ipynb"
 - part: "Burn Ratio Calculations"
   chapters:
-  - file: "sources/03 Overview.md"
+  - file: "sources/03-overview.md"
   - file: "sources/03a-forest-fire-product-downloads.ipynb"
   - file: "sources/03b-forest-fires-2018-and-2019.ipynb"
   - file: "sources/03c-dnbr.ipynb"

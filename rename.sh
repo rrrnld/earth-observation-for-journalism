@@ -2,7 +2,7 @@
 
 OIFS="$IFS"
 IFS=$'\n'
-for file in `find sources -maxdepth 1 -type f -name "*.ipynb"`
+for file in `find sources -maxdepth 1 -type f -name "*.regex" -or -name "*.md"`
 do
      name="$(basename $file)"
      renamed="$(basename $file | sed 's/.*/\L&/' | sed 's/ /-/g')"
