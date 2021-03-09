@@ -23,7 +23,6 @@
   chapters:
   - file: "sources/03 Overview.md"
   - file: "sources/03a Forest Fire Product Downloads.ipynb"
-  - file: "sources/03b Example Initialized Downloads.ipynb"
   - file: "sources/03b Forest Fires 2018 and 2019.ipynb"
   - file: "sources/03c dNBR.ipynb"
 - part: "Appendix"
