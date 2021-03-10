@@ -14,7 +14,7 @@ The registration form can be found at https://scihub.copernicus.eu/dhus/.
 ## Target Audience
 
 These notebooks assume Python knowledge as well as familiarity with common Python data processing tools like the `pandas` library.
-The topic is approached primarily from a computer science perspective, i.e. not an aeronautical, not a geophyisical, or any other one.
+The topic is approached primarily from a computer science perspective, i.e. not an aeronautical, not a geophysical, or any other one.
 As a consequence the focus will be how different tasks can be implemented.
 Many considerations behind a particular action or processing step can only be briefly touched.
 
