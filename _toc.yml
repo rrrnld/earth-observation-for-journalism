@@ -22,8 +22,9 @@
 - part: "Burn Ratio Calculations"
   chapters:
   - file: "sources/03-overview.md"
-  - file: "sources/03a-forest-fire-product-downloads.ipynb"
-  - file: "sources/03b-forest-fires-2018-and-2019.ipynb"
+  - file: "sources/03a-area-of-interest-definition-and-product-download.ipynb"
+    sections:
+    - file: "sources/03a-forest-fire-product-downloads.ipynb"
   - file: "sources/03c-dnbr.ipynb"
 - part: "Appendix"
   chapters:
