@@ -1,14 +1,14 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
 - file: "README.md"
-- part: "Data Retrieval and Processing"
+- part: "1. Data Retrieval and Processing"
   chapters:
   - file: "sources/01-overview.md"
   - file: "sources/01a-download-process.ipynb"
   - file: "sources/01b-visualization.ipynb"
   - file: "sources/01c-coverage-analysis.ipynb"
   - file: "sources/01d-true-color-mosaic.ipynb"
-- part: "Spectral Indices"
+- part: "2. Spectral Indices"
   chapters:
   - file: "sources/02-overview.md"
   - file: "sources/02a-area-of-interest-definition-and-product-download.ipynb"
@@ -19,7 +19,7 @@
     - file: "sources/02d-cloud-masks.ipynb"
   - file: "sources/02b-timeseries.ipynb"
   - file: "sources/02e-spectral-indices.ipynb"
-- part: "Burn Ratio Calculations"
+- part: "3. Burn Ratio Calculations"
   chapters:
   - file: "sources/03-overview.md"
   - file: "sources/03a-area-of-interest-definition-and-product-download.ipynb"
