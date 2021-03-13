@@ -31,7 +31,7 @@ def search_osm(place):
     return gpd.read_file(search_url)
 
             
-def plot_downloaded_products(products, area_of_interest, **kwargs):
+def plot_product_extent(products, area_of_interest, **kwargs):
     ax = kwargs.get('ax')
     alpha = kwargs.pop('alpha', 0.1)
     if not ax:
