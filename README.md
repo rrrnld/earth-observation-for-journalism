@@ -20,8 +20,8 @@ Many considerations behind a particular action or processing step can only be br
 
 ## Obtaining and Running the Code
 
-The notebooks are published for reading at https://arne.schlueter.is/working-on/remote-sensing-for-journalism.
-The source code lives at https://github.com/heyarne/remote-sensing-for-journalism.
+The notebooks are published for reading at https://arne.schlueter.is/working-on/earth-observation-for-journalism.
+The source code lives at https://github.com/heyarne/earth-observation-for-journalism.
 
 A `Dockerfile` is present at the root of the repository to help with reproducing the computing environment.
 The image can be built by running the following command from the project root:
