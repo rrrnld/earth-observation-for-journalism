@@ -14,6 +14,7 @@ execute:
 
 repository:
   url: https://github.com/heyarne/earth-observation-for-journalism
+  branch: main
 html:
   use_repository_button: true
   
