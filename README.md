@@ -50,11 +50,11 @@ Follow the link for more information on installed packages or other configuratio
 ## Hardware Requirements
 
 Note that working with this kind of data is resource intensive.
-These notebooks download or create roughly 50GB of data, most of which is occupied by compressed GeoTIFF files.
+These notebooks download or create roughly 50GB of data, most of which is occupied by compressed raster geodata.
 They have been executed and tested on a virtual server with 4 CPU cores with a clock speed of 2.6 GHz each and 32 GB of RAM.
 
-There are notebooks cells with `%%time` or `%%timeit` magic commands.
-Their ouput contains information about the execution time on the system described above.
+Some notebooks contain cells that start with either the `%%time` or `%%timeit` magic commands.
+These cells often contain code that does not immediately produce output and the magic commands produce information about the execution time on the system described above.
 
 ## Building the Jupyter Book
 
