@@ -3,7 +3,7 @@
 This repository contains a series of notebooks describing interaction with the Copernicus Open Access Hub in order to obtain, manipulate and analyze earth observation data.
 The aim is to document common tasks that might make the data from the Copernicus Sentinel-2 mission attractive for usage in data journalism.
 
-The publication and research uses [Jupyter notebooks](https://jupyter.org) and is published using [jupyter-books](https://jupyter-book.org), an open-source python project that allows generating HTML pages from a collection of Jupyter notebooks.
+The publication and research uses [Jupyter notebooks](https://jupyter.org) and is published using [jupyter-books](https://jupyterbook.org), an open-source python project that allows generating HTML pages from a collection of Jupyter notebooks.
 
 ## Copernicus Open Access Hub
 
