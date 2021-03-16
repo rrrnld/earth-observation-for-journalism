@@ -13,7 +13,8 @@ execute:
   execute_notebooks: "off"
 
 repository:
-  url: https://github.com/heyarne/remote-sensing-for-journalism
+  url: https://github.com/heyarne/earth-observation-for-journalism
+  branch: main
 html:
   use_repository_button: true
   

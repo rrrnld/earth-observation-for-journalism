@@ -3,7 +3,7 @@
 This repository contains a series of notebooks describing interaction with the Copernicus Open Access Hub in order to obtain, manipulate and analyze earth observation data.
 The aim is to document common tasks that might make the data from the Copernicus Sentinel-2 mission attractive for usage in data journalism.
 
-The publication and research uses [Jupyter notebooks](https://jupyter.org) and is published using [jupyter-books](https://jupyter-book.org), an open-source python project that allows generating HTML pages from a collection of Jupyter notebooks.
+The publication and research uses [Jupyter notebooks](https://jupyter.org) and is published using [jupyter-books](https://jupyterbook.org), an open-source python project that allows generating HTML pages from a collection of Jupyter notebooks.
 
 ## Copernicus Open Access Hub
 
@@ -50,11 +50,11 @@ Follow the link for more information on installed packages or other configuratio
 ## Hardware Requirements
 
 Note that working with this kind of data is resource intensive.
-These notebooks download or create roughly 50GB of data, most of which is occupied by compressed GeoTIFF files.
+These notebooks download or create roughly 50GB of data, most of which is occupied by compressed raster geodata.
 They have been executed and tested on a virtual server with 4 CPU cores with a clock speed of 2.6 GHz each and 32 GB of RAM.
 
-There are notebooks cells with `%%time` or `%%timeit` magic commands.
-Their ouput contains information about the execution time on the system described above.
+Some notebooks contain cells that start with either the `%%time` or `%%timeit` magic commands.
+These cells often contain code that does not immediately produce output and the magic commands produce information about the execution time on the system described above.
 
 ## Building the Jupyter Book
 
