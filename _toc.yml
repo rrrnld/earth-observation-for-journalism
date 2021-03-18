@@ -11,21 +11,23 @@
 - part: "2. Spectral Indices"
   chapters:
   - file: "sources/02-overview.md"
-  - file: "sources/02a-area-of-interest-definition-and-product-download.ipynb"
+  - file: "sources/02a-data-retrieval.ipynb"
+    sections:
+    - file: "sources/02a-data-retrieval-corrupted-zip-files.ipynb"
   - file: "sources/02b-ndvi.ipynb"
     sections:
-    - file: "sources/02c-corrupted-zip-file.ipynb"
-    - file: "sources/02c-multiprocessing-benchmarks.ipynb"
-    - file: "sources/02d-cloud-masks.ipynb"
-  - file: "sources/02b-timeseries.ipynb"
-  - file: "sources/02e-spectral-indices.ipynb"
+    - file: "sources/02b-ndvi-cloud-masks.ipynb"
+  - file: "sources/02c-time-series.ipynb"
+    sections:
+    - file: "sources/02c-time-series-multiprocessing-benchmarks.ipynb"
+  - file: "sources/02d-spectral-indices.ipynb"
 - part: "3. Burn Ratio Calculations"
   chapters:
   - file: "sources/03-overview.md"
-  - file: "sources/03a-area-of-interest-definition-and-product-download.ipynb"
+  - file: "sources/03a-data-retrieval.ipynb"
     sections:
-    - file: "sources/03a-forest-fire-product-downloads.ipynb"
-  - file: "sources/03c-dnbr.ipynb"
+    - file: "sources/03a-data-retrieval-estimate.ipynb"
+  - file: "sources/03b-dnbr.ipynb"
 - part: "Appendix"
   chapters:
-  - file: "sources/XX sentinel_helpers.rst"
+  - file: "sources/xx-sentinel-helpers.rst"
