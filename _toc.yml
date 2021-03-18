@@ -31,3 +31,4 @@
 - part: "Appendix"
   chapters:
   - file: "sources/xx-sentinel-helpers.rst"
+  - file: "LICENSE.md"

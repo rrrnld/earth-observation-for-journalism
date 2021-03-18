@@ -7,7 +7,7 @@
 # Book settings
 title: Using Earth Observation for Journalism  # The title of the book. Will be placed in the left navbar.
 author: Arne Schlüter  # The author of the book
-copyright: "CC-BY-SA 4.0. Header image: \"Herschel's 40-foot telescope\" (public domain)"  # Copyright year to be placed in the footer
+copyright: "2021. Header image: \"Herschel's 40-foot telescope\" (Public Domain)"  # Copyright year to be placed in the footer
 logo: great-forty-foot-telescope-wikipedia.png  # A path to the book logo
 execute:
   execute_notebooks: "off"
